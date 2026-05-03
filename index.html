@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="" method="POST">
+            <h1>CONTATO</h1>
+            <div class="formulario">
+                <input type="text" id="nome" name="nome" class="campo" placeholder="" required>
+                <label for="nome">Nome</label>
+            </div><br>
+
+            <div class="formulario">
+                <input type="email" id="email" name="email" class="campo" placeholder="" required>
+                <label for="email">E-mail</label>
+            </div><br>
+
+            <div class="formulario">
+                <select name="assunto" id="listaAssunto" class="campoOpcao" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="html">Html</option>
+                    <option value="js">Javascript</option>
+                    <option value="css">Css</option>
+                    <option value="java">Java</option>
+                </select>
+                <label for="listaAssunto">Assunto</label>
+            </div><br>
+
+            <div class="formulario">
+                <div class="textContainer">
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    <textarea name="mensagem" id="mensagem" rows="4" cols="50" class="campoArea" placeholder="" required></textarea>
+                    <label for="mensagem">Mensagem</label>
+                </div>
+            </div>
+        </form>
+        <div class="containerFantasma">
+            <div class="ani">
+                <div class="textSaudacao">
+                    <div id="saudacao">Olá</div>
+                    <div class="tri"></div>
+                </div>
+                <div class="fantasma">
+                    <div class="rosto">
+                        <div class="olhos">
+                            <div class="olhoD"></div>
+                            <div class="olhoE"></div>
+                        </div>
+                        <div class="boca">◡</div>
+                    </div>
+                    <div class="corpoFantasma"></div>
+                    <div class="ondaT">
+                        <br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="ondaFantamaTras">
+                            <path class="ondaTras" fill-opacity="1" d="M 0 160 L 93 121 C 160 96 320 64 480 90.7 C 640 117 800 203 960 224 C 1120 245 1280 203 1360 181.3 L 1440 160 L 1440 0 L 1360 0 C 1280 0 1120 0 960 0 C 800 0 640 0 480 0 C 320 0 160 0 80 0 L 0 0 Z"></path>
+                            <path class="ondaTrasCont" fill-opacity="1" d="M 0 160 L 93 121 C 160 96 320 64 480 90.7 C 640 117 800 203 960 224 C 1120 245 1280 203 1360 181.3 L 1440 160 L 1440 0 L 1360 0 C 1280 0 1120 0 960 0 C 800 0 640 0 480 0 C 320 0 160 0 80 0 L 0 0 Z"></path>
+                        </svg>
+                    </div>
+                    <div class="ondaF">
+                        <br><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="ondaFantama">
+                            <path class="ondaFrente" fill-opacity="1" d="M 0 160 L 93 121 C 160 96 320 64 480 90.7 C 640 117 800 203 960 224 C 1120 245 1280 203 1360 181.3 L 1440 160 L 1440 0 L 1360 0 C 1280 0 1120 0 960 0 C 800 0 640 0 480 0 C 320 0 160 0 80 0 L 0 0 Z"></path>
+                            <path class="ondaFrenteCont" fill-opacity="1" d="M 0 160 L 93 121 C 160 96 320 64 480 90.7 C 640 117 800 203 960 224 C 1120 245 1280 203 1360 181.3 L 1440 160 L 1440 0 L 1360 0 C 1280 0 1120 0 960 0 C 800 0 640 0 480 0 C 320 0 160 0 80 0 L 0 0 Z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <br><div class="sombra"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

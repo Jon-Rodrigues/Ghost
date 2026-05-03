@@ -1,0 +1,375 @@
+:root {
+  --bg-color: #fcf0e2;
+  --text-color: #000000;
+  --border-color: #c5c5c5;
+  --fantasma-color: #2f2f2f;
+  --fantasma-onda: #686565;
+  --fantasma-sombraA: #27021f3a;
+  --fantasma-sombraB: #27021f65;
+  --button: #fcf0e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #2f2f2f;
+    --text-color: #ffffff;
+    --border-color: #c4b6a5ab;
+    --fantasma-color: #fcf0e2;
+    --fantasma-onda: #c4b6a5;
+    --fantasma-sombraA: #121111a7;
+    --fantasma-sombraB: #000000a4;
+    --button: #686666;
+  }
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+.container {
+    display: grid; 
+    grid-template-columns: 1.2fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    "Quad Formulario"
+    "Quad Formulario"
+    "Quad Formulario"; 
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+h1{
+    color: var(--fantasma-color);
+}
+
+#form{
+    grid-area: Formulario;
+    height: 300px;
+}
+
+.formulario{
+    position: relative;
+    margin-bottom: 25px;
+    display: inline-block;
+    align-items: start;
+}
+
+.campo,
+.campoOpcao{
+    background: transparent;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    flex: 1;
+    color: var(--text-color);
+}
+
+
+
+select:focus{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.campoOpcao{
+    width: 320px;
+}
+
+.campoArea{
+    background: transparent;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    flex: 1;
+    resize: vertical;
+    width: 300px;
+    min-height: 50px;
+    max-height: 300px;
+    color: var(--text-color);
+}
+
+label,
+select:invalid + label {
+    padding: 0px;
+    padding-inline: 5px;
+    font-size: 15px;
+    background-color: var(--bg-color);
+    color: gray;
+    position: relative;
+    top: 2px;
+    left: 13px;
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+#mensagem + label{
+    position: absolute;
+    top: 10px;
+    left: 13px;
+}
+
+
+.campo:focus,
+.campoOpcao:focus,
+#mensagem:focus {
+    border: 2px solid rgb(46, 154, 201);
+    outline: none;
+}
+
+.campo:hover,
+.campoOpcao:hover,
+#mensagem:hover {
+    border: 1px solid rgb(46, 154, 201);
+}
+
+.campo:not(:placeholder-shown) + label,
+.campoOpcao:valid + label,
+.campo:focus + label {
+    top: -12px;
+    color: rgb(46, 154, 201);
+}
+
+#mensagem:not(:placeholder-shown) + label,
+#mensagem:focus + label {
+    top: -11px;
+    color: rgb(46, 154, 201);
+}
+
+.formulario textarea{
+    padding-bottom: 50px;
+    padding-right: 100px;
+}
+
+.textContainer{
+    position: relative;
+    display: inline-block;
+}
+
+button{
+    border-radius: 20px;
+    padding: 10px;
+    transition: ease-in-out 0.3s;
+    border: none;
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+    z-index: 2;
+    font-size: 16px;
+    background-color: var(--button);
+}
+
+button:hover{
+    background-color: rgb(38, 117, 150);
+    color: white;
+}
+
+.textSaudacao{
+    display: flex;
+    background-color: var(--fantasma-color);
+    color: var(--bg-color);
+    width: 300px;
+    font-size: 40px;
+    padding: 20px;
+    padding-left: 30px;
+    border-radius: 20px;
+    animation: flutuar 3s infinite ease-in-out;
+    animation-direction: alternate;
+}
+
+.tri{
+    width: 0;
+    height: 0;
+    rotate: 45deg;
+    position: absolute;
+    bottom: -8px;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid var(--fantasma-color);
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+.containerFantasma{
+    grid-area: Quad;
+    display: flex;
+    position: relative;
+    align-items: end;
+    justify-content: center;
+    left: 250px;
+    top: 100px;
+    width: 700px;
+    height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.fantasma{
+    justify-content: center;
+    animation: flutuar 3s infinite ease-in-out;
+    animation-direction: alternate;
+}
+
+.corpoFantasma{
+    width: 200px;
+    height: 200px;
+    background-color: var(--fantasma-color);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    overflow: hidden;
+}
+
+.ondaFantama{
+    fill: var(--fantasma-color);
+    width: 200px;
+    height: 50px;
+    position: relative;
+    top: -25px;
+}
+
+.ondaFantamaTras{
+    fill: var(--fantasma-color);
+    width: 200px;
+    height: 50px;
+    display: flex;
+    top: -25px;
+}
+
+.ondaFrente{
+    fill: var(--fantasma-color);
+    animation: scrollF 2s linear infinite;
+}
+
+.ondaFrenteCont{
+    fill: var(--fantasma-color);
+    animation: scrollFF 2s linear infinite;
+}
+
+.ondaTras{
+    fill: var(--fantasma-onda);
+    animation: scrollT 4s linear infinite;
+}
+
+.ondaTrasCont{
+    fill: var(--fantasma-onda);
+    animation: scrollTT 4s linear infinite;
+}
+
+.ondaT{
+    transform: translateY(-25px);
+}
+
+.ondaF{
+    transform: translateY(-70px);
+}
+
+.olhos{
+    display: flex;
+    gap: 20px;
+}
+
+.olhoD,
+.olhoE{
+    position: relative;
+    transform: translateY(60px) translateX(80px);
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--bg-color);
+}
+
+.boca{
+    color: var(--bg-color);
+    transform: translateY(60px) translateX(92px);
+}
+
+.sombra{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    top: -100px;
+    background: #27021f65;
+    border-radius: 50%;
+    filter: blur(10px);
+    animation: sombraAnima 3s infinite ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes scrollT {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1434px);
+  }
+}
+
+@keyframes scrollTT {
+  from {
+    transform: translateX(1434px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollF {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(1434px);
+  }
+}
+
+@keyframes scrollFF {
+  from {
+    transform: translateX(-1434px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes flutuar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes sombraAnima {
+    from {
+        transform: scale(0.7);
+        background: var(--fantasma-sombraA);
+        filter: blur(20px);
+    }
+    to {
+        transform: scale(1);
+        background: var(--fantasma-sombraB);
+        filter: blur(8px);
+    }
+}
